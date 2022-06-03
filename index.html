@@ -21,7 +21,7 @@
            @mousedown="search"
            @mouseover="color = '#f3c258'"
            @mouseleave="color = '#fff'"></i>
-        <select size="1" v-model="type">
+        <select size="1" v-model="type" @change="changeType()">
             <option class="select_option" v-for="(item,index) in options" :value="item.value">{{item.label}}</option>
         </select>
     </div>
@@ -66,7 +66,7 @@
             initialHeight: '',
             pictureList: [],
             id: '',
-            image:'https://shp.qpic.cn/ishow/2735051314/1652424750_1265602313_15461_sProdImgNo_6.jpg/0',
+            image: 'https://shp.qpic.cn/ishow/2735051314/1652424750_1265602313_15461_sProdImgNo_6.jpg/0',
             heroName: '米莱狄',
             heroList: [],
             skinNum: 0,
@@ -168,6 +168,11 @@
                 } else {
                     document.getElementById('input').style.borderColor = 'transparent'
                 }
+            },
+            changeType(value) {
+                this.pictureList = []
+                this.getSkin(this.heroName)
+                this.getLowestScore()
             },
             getSkin(hero) {
                 let that = this
