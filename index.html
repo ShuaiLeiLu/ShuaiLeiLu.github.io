@@ -8,7 +8,7 @@
 
 </head>
 <body style="margin: 0">
-<div id="app">
+<div id="app" :style="{backgroundImage: 'url('+image+')'}">
     <div id="input">
         <input type="text"
                placeholder="请输入你想查询的英雄名..."
@@ -66,6 +66,7 @@
             initialHeight: '',
             pictureList: [],
             id: '',
+            image:'https://shp.qpic.cn/ishow/2735051314/1652424750_1265602313_15461_sProdImgNo_6.jpg/0',
             heroName: '米莱狄',
             heroList: [],
             skinNum: 0,
